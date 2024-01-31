@@ -1,6 +1,6 @@
 const UserService = require('../services/user_services');
 const userService = new UserService();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.signUp = async (req,res) => {

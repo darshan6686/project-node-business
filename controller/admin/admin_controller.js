@@ -1,6 +1,6 @@
 const UserService = require('../../services/user_services');
 const userService = new UserService();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 exports.getProfile = async (req,res) => {
     try {
