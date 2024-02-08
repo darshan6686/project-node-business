@@ -62,3 +62,21 @@ exports.getLead = async (req,res) => {
         res.status(500).json({message: "Internal Server Error"});
     }
 }
+
+exports.deleteRead = async (req,res) => {
+    try {
+        let isLead = await leadService.deleteLead(
+            req.body.leadId,
+            {
+                isDelete: true
+            }
+        )
+        if (!isLead) {
+            return res.status(400).json({ message: 'Failed to delete Ask.' });
+        }
+        res.json({ isLead, message: 'Delete Ask Successfully!' });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({message: "Internal Server Error"});
+    }
+}

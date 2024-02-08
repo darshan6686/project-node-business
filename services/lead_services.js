@@ -12,4 +12,8 @@ module.exports = class Lead {
     updateLead = async (id,body) => {
         return await leadModel.updateOne({askId: id}, {$set: body}, {new: true});
     }
+
+    deleteLead = async (id,body) => {
+        return await leadModel.updateOne({_id: id}, {$set: body}, {new: true});
+    }
 }

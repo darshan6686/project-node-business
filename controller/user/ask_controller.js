@@ -113,12 +113,12 @@ exports.deleteAsk = async (req,res) => {
             }
         )
 
-        let lead = await leadService.updateLead(
-            req.body.askId,
-            {
-                isDelete: true
-            }
-        )
+        // let lead = await leadService.updateLead(
+        //     req.body.askId,
+        //     {
+        //         isDelete: true
+        //     }
+        // )
         if (!isAsk) {
             return res.status(400).json({ message: 'Failed to delete Ask.' });
         }
